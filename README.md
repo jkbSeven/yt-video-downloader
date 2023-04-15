@@ -6,3 +6,5 @@ Graphical interface made with PyQt6, download process handled with usage of pytu
 In order to merge you need to have ffmpeg installed: ``https://ffmpeg.org/download.html``
 
 If you want to make .exe out of it use the auto-py-to-exe library: ``pip install auto-py-to-exe``
+
+All modules required are listed in requirements.txt, simply make a venv and ``pip install -r requirements.txt``

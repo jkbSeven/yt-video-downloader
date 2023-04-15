@@ -168,7 +168,7 @@ class FormatSelection(QWidget):
             self.video_combobox.clear()
             self.video_combobox.setVisible(True) 
             if self.info_widget.yt is not None:
-                for itag in self.info_widget.video_data.values(): # accessing and adding to the box video qualities and codecs that were gathered at earlier stage
+                for itag in self.info_widget.video_data.values(): # accessing video qualities and codecs that were gathered at earlier stage
                     resolution, vcodec = itag.values()
                     self.video_combobox.addItem(f"{resolution}, {vcodec}")
         else:
@@ -269,7 +269,7 @@ class DownloadSection(QWidget):
             self.video_stream = None
             self.video_size = 0
 
-        # same as with  video
+        # same as with video
         if audio_itag is not None:
             self.audio_quality_itag = int(audio_itag)
             self.audio_stream = self.info_widget.yt.streams.get_by_itag(self.audio_quality_itag)
@@ -286,7 +286,7 @@ class DownloadSection(QWidget):
 
     # selecting path where file(s) will be saved
     def browse_filesystem(self):
-        directory = str(QFileDialog.getExistingDirectory(self, "Wybierz folder"))
+        directory = str(QFileDialog.getExistingDirectory(self, "Select directory"))
 
         if directory:
             path = Path(directory)
