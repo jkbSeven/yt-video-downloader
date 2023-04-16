@@ -8,3 +8,8 @@ In order to merge you need to have ffmpeg installed: ``https://ffmpeg.org/downlo
 If you want to make .exe out of it use the auto-py-to-exe library: ``pip install auto-py-to-exe``
 
 All modules required are listed in requirements.txt, simply make a venv and ``pip install -r requirements.txt``
+
+## TODO
+- add conversion to other media formats
+- improve error handling
+- add ability for user to change the output name
