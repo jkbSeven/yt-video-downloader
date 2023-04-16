@@ -1,7 +1,6 @@
 import sys
 import re
 import os
-import glob
 import ffmpeg
 from pytube import YouTube, exceptions
 from PyQt6.QtWidgets import QApplication, QMainWindow, QLineEdit, QLabel,\
@@ -310,8 +309,8 @@ class DownloadSection(QWidget):
                                          buttons=QMessageBox.StandardButton.Ok)
                 else:
                     if self.video_stream is not None and self.audio_stream is not None:
-                        video_path = f"{path}\\{author}_video_{self.video_stream.default_filename}"
-                        audio_path = f"{path}\\{author}_audio_{self.audio_stream.default_filename}"
+                        video_path = os.path.abspath(f"{path}\\{author}_video_{self.video_stream.default_filename}")
+                        audio_path = os.path.abspath(f"{path}\\{author}_audio_{self.audio_stream.default_filename}")
                         input_video = ffmpeg.input(video_path)
                         input_audio = ffmpeg.input(audio_path)
 
